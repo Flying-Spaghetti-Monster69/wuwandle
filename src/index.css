@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.image-background {
+  background-image: url("https://cdn.wanderer.moe/wuthering-waves/cover.png");
+}
+
 @layer base {
   @font-face {
     font-family: "Cinzel", serif;
