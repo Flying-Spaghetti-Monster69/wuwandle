@@ -3,11 +3,16 @@ import Navbar from "./components/Navbar";
 
 import "@mantine/core/styles.css";
 
-import { MantineProvider } from "@mantine/core";
+import { MantineProvider, createTheme } from "@mantine/core";
+
+const theme = createTheme({
+  primaryColor: "yellow",
+  cursorType: "pointer",
+});
 
 function App() {
   return (
-    <MantineProvider defaultColorScheme="dark">
+    <MantineProvider defaultColorScheme="dark" theme={theme}>
       <Body />
     </MantineProvider>
   );

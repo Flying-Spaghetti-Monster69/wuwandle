@@ -1,4 +1,5 @@
 import { Autocomplete, Avatar, Group, Text } from "@mantine/core";
+import { lazy } from "react";
 
 const usersData = {
   "Emily Johnson": {
@@ -53,7 +54,7 @@ function CharacterDropdown() {
       renderOption={renderAutocompleteOption}
       maxDropdownHeight={300}
       placeholder="Search for character"
-      className=" focus:border-yellow-300"
+      className="  "
     />
   );
 }
