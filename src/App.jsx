@@ -1,5 +1,4 @@
 import Body from "./components/Body";
-import Navbar from "./components/Navbar";
 
 import "@mantine/core/styles.css";
 
