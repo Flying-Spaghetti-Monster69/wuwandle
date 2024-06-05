@@ -37,12 +37,15 @@ export const useCharactersStore = create((set, get) => ({
           affiliation,
         };
       });
-      console.log(characters);
       if (characters.length > 0) {
         set({ loading: false, characters });
       }
     } catch (error) {
       console.log(error);
     }
+  },
+
+  addGuesses: (guess) => {
+    set((state) => ({ guesses: [...state.guesses, guess] }));
   },
 }));

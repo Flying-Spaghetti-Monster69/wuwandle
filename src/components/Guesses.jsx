@@ -1,4 +1,4 @@
-import { Container, Group, Paper } from "@mantine/core";
+import { Container, Group } from "@mantine/core";
 import GuessesHeader from "./GuessesHeader";
 
 const Guesses = () => {
@@ -11,7 +11,6 @@ const Guesses = () => {
         <div>xd</div>
       </Group>
     </Container>
-    
   );
 };
 

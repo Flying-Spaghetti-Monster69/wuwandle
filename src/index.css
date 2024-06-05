@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .image-background {
-  background-image: url("https://cdn.wanderer.moe/wuthering-waves/cover.png");
+  background-image: url("https://res.cloudinary.com/dby7b7qgf/image/upload/f_auto,q_auto,w_1920,h_1080/v1/Wuwandle/wallpaper2");
 }
 
 @layer base {

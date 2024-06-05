@@ -13,7 +13,7 @@ const Body = () => {
   }, []);
 
   return (
-    <main className="bg-fixed bg-cover bg-top image-background min-h-screen w-screen">
+    <main className="bg-fixed bg-cover bg-center image-background min-h-screen w-screen">
       <Navbar />
       {/* <div className="flex flex-row grid-cols-2 justify-center"> */}
       <Flex
