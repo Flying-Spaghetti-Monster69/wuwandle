@@ -11,6 +11,7 @@ export const useCharactersStore = create((set, get) => ({
   characters: [],
   guesses: [],
   loading: true,
+  correctCharacter: {},
 
   fetchCharacters: async () => {
     try {
@@ -39,6 +40,12 @@ export const useCharactersStore = create((set, get) => ({
       });
       if (characters.length > 0) {
         set({ loading: false, characters });
+        set((state) => ({
+          correctCharacter:
+            state.characters[
+              Math.floor(Math.random() * state.characters.length)
+            ],
+        }));
       }
     } catch (error) {
       console.log(error);
@@ -48,4 +55,6 @@ export const useCharactersStore = create((set, get) => ({
   addGuesses: (guess) => {
     set((state) => ({ guesses: [...state.guesses, guess] }));
   },
+
+  setRandomCorrectCharacter: () => {},
 }));
