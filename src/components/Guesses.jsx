@@ -1,15 +1,19 @@
-import { Container, Group } from "@mantine/core";
+import { Container } from "@mantine/core";
 import GuessesHeader from "./GuessesHeader";
+import { useCharactersStore } from "../store/characters";
+import Guess from "./Guess";
 
 const Guesses = () => {
+  const { guesses, characters } = useCharactersStore((state) => state);
   return (
     <Container className="w-[53rem] h-[37rem]">
       <GuessesHeader />
-      <Group>
-        <div>xd</div>
-        <div>xd</div>
-        <div>xd</div>
-      </Group>
+      {guesses.map((guess) => {
+        const character = characters.find(
+          (char) => char.characterName === guess
+        );
+        return <Guess key={guess} {...character} />;
+      })}
     </Container>
   );
 };

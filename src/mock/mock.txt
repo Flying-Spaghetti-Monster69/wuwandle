@@ -1,0 +1,11 @@
+  {
+    id: '1RLmRfglvfnqD3hzyJ2No8',
+    characterName: 'Baizhi',
+    imageUrl: 
+      'https://res.cloudinary.com/dby7b7qgf/image/upload/f_auto,q_auto/v1/Wuwandle/baizhi',
+    element: 'Glacio',
+    weaponType: 'Rectifier',
+    ascensionMats: 'Lanternberry',
+    weeklyMats: 'Monument Bell',
+    affiliation: 'Jinzhou'
+  }
