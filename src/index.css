@@ -17,3 +17,29 @@
     src: url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
   }
 }
+
+@media (min-width: 992px) {
+  .option-pager {
+    margin-left: 10%;
+    width: 24rem;
+    height: 80vh;
+  }
+  .guesses {
+    width: 56rem;
+    height: 80vh;
+  }
+}
+
+@media (max-width: 650px) {
+  .guesses {
+    perspective: 1000px;
+    transform: scale(0.55);
+    min-width: 180vw;
+    padding: 0px;
+    margin: 0px;
+    font-size: smaller;
+  }
+  .content {
+    flex: 1;
+  }
+}

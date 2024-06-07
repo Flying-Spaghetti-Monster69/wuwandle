@@ -6,27 +6,30 @@ import { useCharactersStore } from "../store/characters";
 import { useEffect } from "react";
 
 const Body = () => {
-  const xd = useCharactersStore((state) => state.fetchCharacters);
+  const getCharacters = useCharactersStore((state) => state.fetchCharacters);
 
   useEffect(() => {
-    xd();
+    getCharacters();
   }, []);
 
   return (
-    <main className="bg-fixed bg-cover bg-center image-background min-h-screen w-screen">
-      <Navbar />
-      {/* <div className="flex flex-row grid-cols-2 justify-center"> */}
-      <Flex
-        mih={50}
-        gap="xl"
-        justify="center"
-        align="center"
-        direction="row"
-        wrap="nowrap"
-      >
-        <OptionPaper />
-        <Guesses />
-      </Flex>
+    <main className="bg-fixed bg-cover bg-center image-background fixed top-0 left-0 right-0  bottom-0 overflow-visible">
+      <div className="h-full overflow-auto ">
+        <Navbar />
+        {/* <div className="flex flex-row grid-cols-2 justify-center"> */}
+        <Flex
+          mih={50}
+          gap="xl"
+          justify="center"
+          align="center"
+          direction={{ base: "column", md: "row" }}
+          wrap="nowrap"
+          className="md:flex-col"
+        >
+          <OptionPaper />
+          <Guesses />
+        </Flex>
+      </div>
     </main>
   );
 };

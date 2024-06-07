@@ -6,8 +6,8 @@ import Guess from "./Guess";
 const Guesses = () => {
   const { guesses, characters } = useCharactersStore((state) => state);
   return (
-    <Container className="w-[53rem] h-[37rem]">
-      <GuessesHeader />
+    <Container className="guesses h-auto w-[100%] ">
+      <GuessesHeader className="content" />
       {guesses.map((guess) => {
         const character = characters.find(
           (char) => char.characterName === guess

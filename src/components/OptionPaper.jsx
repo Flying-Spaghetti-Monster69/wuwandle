@@ -9,7 +9,9 @@ function capitalizeFirstLetter(string) {
 }
 
 export function OptionPaper() {
-  const { addGuesses, characters } = useCharactersStore((state) => state);
+  const { addGuesses, characters, guesses } = useCharactersStore(
+    (state) => state
+  );
   const guess = useForm({
     mode: "uncontrolled",
     initialValues: {
@@ -28,7 +30,7 @@ export function OptionPaper() {
 
   return (
     <form
-      className="ml-[10%] my-5 p-0 w-[24rem] h-[80vh]"
+      className="option-pager my-5 p-0 w-[90%] h-[50vh]"
       onSubmit={guess.onSubmit((values) => {
         addGuesses(capitalizeFirstLetter(values.character));
         guess.reset();
@@ -47,7 +49,7 @@ export function OptionPaper() {
 
         <Stack className="h-[90%]">
           <h3 className="text-center font-semibold font-sans text-lg text-white mt-1 ">
-            Tries: 0/5
+            Tries: {guesses.length}/5
           </h3>
           <CharacterDropdown
             key={guess.key("character")}
