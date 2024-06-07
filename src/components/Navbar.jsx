@@ -33,7 +33,6 @@ const Navbar = () => {
                     className="w-4 h-4 border border-gray-300 rounded bg-gray-100 focus:ring-yellow-300 focus:ring-opacity-50 checked:bg-yellow-300 checked:border-yellow-300"
                     onChange={() => {
                       setShowIconNames();
-                      console.log(showIconNames);
                     }}
                     checked={showIconNames}
                   />

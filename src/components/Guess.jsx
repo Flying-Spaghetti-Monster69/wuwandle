@@ -20,8 +20,8 @@ const Guess = ({
   weeklyMats,
   affiliation,
 }) => {
-  const correctCharacter = useCharactersStore(
-    (state) => state.correctCharacter
+  const { correctCharacter, showIconNames } = useCharactersStore(
+    (state) => state
   );
 
   return (
@@ -55,7 +55,7 @@ const Guess = ({
             : NO_MATCHING_STYLES
         }
       >
-        {element}
+        {showIconNames ? element : <h1>xd</h1>}
       </Paper>
       <Paper
         withBorder={true}
@@ -65,7 +65,7 @@ const Guess = ({
             : NO_MATCHING_STYLES
         }
       >
-        {weaponType}
+        {showIconNames ? weaponType : <h1>xd</h1>}
       </Paper>
       <Paper
         withBorder={true}
@@ -75,7 +75,7 @@ const Guess = ({
             : NO_MATCHING_STYLES
         }
       >
-        {ascensionMats}
+        {showIconNames ? ascensionMats : <h1>xd</h1>}
       </Paper>
       <Paper
         withBorder={true}
@@ -85,7 +85,7 @@ const Guess = ({
             : NO_MATCHING_STYLES
         }
       >
-        {weeklyMats}
+        {showIconNames ? weeklyMats : <h1>xd</h1>}
       </Paper>
       <Paper
         withBorder={true}
