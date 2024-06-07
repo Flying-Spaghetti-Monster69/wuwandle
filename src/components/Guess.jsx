@@ -1,5 +1,6 @@
 import { Group, Paper, Avatar } from "@mantine/core";
 import { useCharactersStore } from "../store/characters";
+import { useEffect } from "react";
 
 const MATCHING_STYLES =
   "border-black border-2 rounded-[0px] bg-[#006100] flex items-center text-center justify-center h-[5rem] text-white w-[10%]";
@@ -20,9 +21,23 @@ const Guess = ({
   weeklyMats,
   affiliation,
 }) => {
-  const { correctCharacter, showIconNames } = useCharactersStore(
-    (state) => state
-  );
+  const {
+    correctCharacter,
+    showIconNames,
+    setGameOver,
+    setCorrectGuess,
+    guesses,
+  } = useCharactersStore((state) => state);
+
+  useEffect(() => {
+    if (correctCharacter.characterName === characterName) {
+      setGameOver(true);
+      setCorrectGuess(true);
+    } else if (guesses.length >= 5) {
+      setCorrectGuess(false);
+      setGameOver(true);
+    }
+  }, []);
 
   return (
     <Group grow gap="0" preventGrowOverflow={false}>
@@ -55,7 +70,15 @@ const Guess = ({
             : NO_MATCHING_STYLES
         }
       >
-        {showIconNames ? element : <h1>xd</h1>}
+        {showIconNames ? (
+          element
+        ) : (
+          <Avatar
+            src={`https://res.cloudinary.com/dby7b7qgf/image/upload/Wuwandle/${element}.webp`}
+            radius="sm"
+            className="w-[100%] h-[100%]"
+          />
+        )}
       </Paper>
       <Paper
         withBorder={true}
@@ -65,7 +88,15 @@ const Guess = ({
             : NO_MATCHING_STYLES
         }
       >
-        {showIconNames ? weaponType : <h1>xd</h1>}
+        {showIconNames ? (
+          weaponType
+        ) : (
+          <Avatar
+            src={`https://res.cloudinary.com/dby7b7qgf/image/upload/Wuwandle/${weaponType}.webp`}
+            radius="sm"
+            className="w-[100%] h-[100%]"
+          />
+        )}
       </Paper>
       <Paper
         withBorder={true}
@@ -75,7 +106,15 @@ const Guess = ({
             : NO_MATCHING_STYLES
         }
       >
-        {showIconNames ? ascensionMats : <h1>xd</h1>}
+        {showIconNames ? (
+          ascensionMats
+        ) : (
+          <Avatar
+            src={`https://res.cloudinary.com/dby7b7qgf/image/upload/Wuwandle/${ascensionMats}.webp`}
+            radius="sm"
+            className="w-[100%] h-[100%]"
+          />
+        )}
       </Paper>
       <Paper
         withBorder={true}
@@ -85,7 +124,15 @@ const Guess = ({
             : NO_MATCHING_STYLES
         }
       >
-        {showIconNames ? weeklyMats : <h1>xd</h1>}
+        {showIconNames ? (
+          weeklyMats
+        ) : (
+          <Avatar
+            src={`https://res.cloudinary.com/dby7b7qgf/image/upload/Wuwandle/${weeklyMats}.webp`}
+            radius="sm"
+            className="w-[100%] h-[100%]"
+          />
+        )}
       </Paper>
       <Paper
         withBorder={true}

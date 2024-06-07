@@ -5,6 +5,7 @@ import Guess from "./Guess";
 
 const Guesses = () => {
   const { guesses, characters } = useCharactersStore((state) => state);
+
   return (
     <Container className="guesses h-auto w-[100%] ">
       <GuessesHeader className="content" />
@@ -12,7 +13,7 @@ const Guesses = () => {
         const character = characters.find(
           (char) => char.characterName === guess
         );
-        return <Guess key={guess} {...character} />;
+        return <Guess key={character.id} {...character} />;
       })}
     </Container>
   );

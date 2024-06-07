@@ -13,6 +13,8 @@ export const useCharactersStore = create((set, get) => ({
   loading: true,
   showIconNames: false,
   correctCharacter: {},
+  isGameOver: false,
+  hasCorrectlyGuessedCharacter: false,
 
   fetchCharacters: async () => {
     try {
@@ -60,5 +62,11 @@ export const useCharactersStore = create((set, get) => ({
   setRandomCorrectCharacter: () => {},
   setShowIconNames: () => {
     set((state) => ({ showIconNames: !state.showIconNames }));
+  },
+  setGameOver: (isGameOver) => {
+    set({ isGameOver });
+  },
+  setCorrectGuess: (booleanValue) => {
+    set({ hasCorrectlyGuessedCharacter: booleanValue });
   },
 }));

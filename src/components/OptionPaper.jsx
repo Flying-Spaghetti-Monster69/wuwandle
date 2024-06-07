@@ -27,6 +27,9 @@ export function OptionPaper() {
           : "invalid character",
     },
   });
+  const { isGameOver, hasCorrectlyGuessedCharacter } = useCharactersStore(
+    (state) => state
+  );
 
   return (
     <form
@@ -51,18 +54,28 @@ export function OptionPaper() {
           <h3 className="text-center font-semibold font-sans text-lg text-white mt-1 ">
             Tries: {guesses.length}/5
           </h3>
-          <CharacterDropdown
-            key={guess.key("character")}
-            {...guess.getInputProps("character")}
-            form={guess.form}
-            getInputProps={guess.getInputProps}
-          />
-          <Button
-            type="submit"
-            className="mt-auto mb-2 bg-yellow-300 hover:bg-yellow-400"
-          >
-            Submit
-          </Button>
+          {isGameOver ? (
+            hasCorrectlyGuessedCharacter ? (
+              <h1>you won</h1>
+            ) : (
+              <h1>you lost</h1>
+            )
+          ) : (
+            <>
+              <CharacterDropdown
+                key={guess.key("character")}
+                {...guess.getInputProps("character")}
+                form={guess.form}
+                getInputProps={guess.getInputProps}
+              />
+              <Button
+                type="submit"
+                className="mt-auto mb-2 bg-yellow-300 hover:bg-yellow-400"
+              >
+                Submit
+              </Button>
+            </>
+          )}
         </Stack>
       </Paper>
     </form>

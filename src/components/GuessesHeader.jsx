@@ -31,19 +31,19 @@ const GuessesHeader = () => {
         withBorder={true}
         className=" border-yellow-300 border-2 text-white bg-[#181b1e] flex items-center text-center justify-center h-[3.5rem] w-[10%] rounded-none"
       >
-        class
+        ascension material
+      </Paper>
+      <Paper
+        withBorder={true}
+        className=" border-yellow-300 border-2 text-white bg-[#181b1e] flex items-center text-center justify-center h-[3.5rem] w-[10%] rounded-none"
+      >
+        weekly material
       </Paper>
       <Paper
         withBorder={true}
         className=" border-yellow-300 border-2 text-white bg-[#181b1e] flex items-center text-center justify-center h-[3.5rem] w-[10%] rounded-none"
       >
         affiliation
-      </Paper>
-      <Paper
-        withBorder={true}
-        className=" border-yellow-300 border-2 text-white bg-[#181b1e] flex items-center text-center justify-center h-[3.5rem] w-[10%] rounded-none"
-      >
-        random shit
       </Paper>
     </Group>
   );
