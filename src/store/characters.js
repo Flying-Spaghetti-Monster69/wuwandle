@@ -11,6 +11,7 @@ export const useCharactersStore = create((set, get) => ({
   characters: [],
   guesses: [],
   loading: true,
+  showIconNames: false,
   correctCharacter: {},
 
   fetchCharacters: async () => {
@@ -57,4 +58,7 @@ export const useCharactersStore = create((set, get) => ({
   },
 
   setRandomCorrectCharacter: () => {},
+  setShowIconNames: () => {
+    set((state) => ({ showIconNames: !state.showIconNames }));
+  },
 }));
