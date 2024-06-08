@@ -2,6 +2,7 @@ import { Button, Paper, Stack } from "@mantine/core";
 import CharacterDropdown from "./CharacterDropdown";
 import { useForm } from "@mantine/form";
 import { useCharactersStore } from "../store/characters";
+import LosingScreen from "./LosingScreen";
 
 function capitalizeFirstLetter(string) {
   const char = string.toLowerCase();
@@ -9,9 +10,13 @@ function capitalizeFirstLetter(string) {
 }
 
 export function OptionPaper() {
-  const { addGuesses, characters, guesses } = useCharactersStore(
-    (state) => state
-  );
+  const {
+    addGuesses,
+    characters,
+    guesses,
+    isGameOver,
+    hasCorrectlyGuessedCharacter,
+  } = useCharactersStore((state) => state);
   const guess = useForm({
     mode: "uncontrolled",
     initialValues: {
@@ -27,9 +32,6 @@ export function OptionPaper() {
           : "invalid character",
     },
   });
-  const { isGameOver, hasCorrectlyGuessedCharacter } = useCharactersStore(
-    (state) => state
-  );
 
   return (
     <form
@@ -58,7 +60,7 @@ export function OptionPaper() {
             hasCorrectlyGuessedCharacter ? (
               <h1>you won</h1>
             ) : (
-              <h1>you lost</h1>
+              <LosingScreen />
             )
           ) : (
             <>

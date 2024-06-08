@@ -27,6 +27,17 @@
   .guesses {
     width: 56rem;
     height: 80vh;
+    margin-bottom: 0px;
+  }
+  .loss-display {
+    margin-top: 0.5rem;
+    height: 40%;
+  }
+  .loss-display-small-text {
+    height: 10%;
+  }
+  .loss-button {
+    margin-bottom: 0.5rem;
   }
 }
 

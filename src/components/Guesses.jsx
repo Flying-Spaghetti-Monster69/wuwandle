@@ -7,7 +7,7 @@ const Guesses = () => {
   const { guesses, characters } = useCharactersStore((state) => state);
 
   return (
-    <Container className="guesses h-auto w-[100%] ">
+    <Container className="guesses h-auto w-[100%] mb-2">
       <GuessesHeader className="content" />
       {guesses.map((guess) => {
         const character = characters.find(

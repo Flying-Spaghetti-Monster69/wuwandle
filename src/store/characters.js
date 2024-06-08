@@ -7,7 +7,7 @@ const client = createClient({
   accessToken: import.meta.env.VITE_API_KEY,
 });
 
-export const useCharactersStore = create((set, get) => ({
+export const useCharactersStore = create((set) => ({
   characters: [],
   guesses: [],
   loading: true,
@@ -68,5 +68,16 @@ export const useCharactersStore = create((set, get) => ({
   },
   setCorrectGuess: (booleanValue) => {
     set({ hasCorrectlyGuessedCharacter: booleanValue });
+  },
+  resetGame: () => {
+    set({
+      guesses: [],
+      isGameOver: false,
+      hasCorrectlyGuessedCharacter: false,
+    });
+    set((state) => ({
+      correctCharacter:
+        state.characters[Math.floor(Math.random() * state.characters.length)],
+    }));
   },
 }));
