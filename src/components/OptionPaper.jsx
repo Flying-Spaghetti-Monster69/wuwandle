@@ -3,6 +3,7 @@ import CharacterDropdown from "./CharacterDropdown";
 import { useForm } from "@mantine/form";
 import { useCharactersStore } from "../store/characters";
 import LosingScreen from "./LosingScreen";
+import WinningScreen from "./WinningScreen";
 
 function capitalizeFirstLetter(string) {
   const char = string.toLowerCase();
@@ -35,7 +36,7 @@ export function OptionPaper() {
 
   return (
     <form
-      className="option-pager my-5 p-0 w-[90%] h-[50vh]"
+      className="option-pager my-5 p-0 w-[90%] h-[55vh]"
       onSubmit={guess.onSubmit((values) => {
         addGuesses(capitalizeFirstLetter(values.character));
         guess.reset();
@@ -58,7 +59,7 @@ export function OptionPaper() {
           </h3>
           {isGameOver ? (
             hasCorrectlyGuessedCharacter ? (
-              <h1>you won</h1>
+              <WinningScreen />
             ) : (
               <LosingScreen />
             )
