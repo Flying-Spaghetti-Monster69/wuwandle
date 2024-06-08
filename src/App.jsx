@@ -6,6 +6,7 @@ import { MantineProvider, createTheme } from "@mantine/core";
 
 const theme = createTheme({
   primaryColor: "yellow",
+  primaryShade: 5,
   cursorType: "pointer",
 });
 

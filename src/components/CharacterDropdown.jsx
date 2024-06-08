@@ -9,7 +9,7 @@ const renderAutocomplete = ({ option }) => {
   );
 
   return (
-    <Group gap="sm">
+    <Group gap="sm" className="selection:bg-yellow-300">
       <Avatar src={imageUrl} size={40} radius="sm" />
       <div>
         <Text
@@ -23,7 +23,7 @@ const renderAutocomplete = ({ option }) => {
   );
 };
 
-function CharacterDropdown({ form, getInputProps }) {
+function CharacterDropdown({ getInputProps }) {
   const isLoading = useCharactersStore((state) => state.loading);
   const charactersNames = useCharactersStore((state) =>
     state.characters.map((character) => character.characterName)
@@ -40,7 +40,7 @@ function CharacterDropdown({ form, getInputProps }) {
           {...getInputProps("character")}
         />
       ) : (
-        <h1>loading...</h1>
+        <h1 className="text-center text-white font-bold text-lg">Loading...</h1>
       )}
     </>
   );

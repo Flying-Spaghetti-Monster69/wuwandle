@@ -27,15 +27,19 @@ const Guess = ({
     setGameOver,
     setCorrectGuess,
     guesses,
+    resetStreak,
+    addStreak,
   } = useCharactersStore((state) => state);
 
   useEffect(() => {
     if (correctCharacter.characterName === characterName) {
       setGameOver(true);
       setCorrectGuess(true);
+      addStreak();
     } else if (guesses.length >= 5) {
       setCorrectGuess(false);
       setGameOver(true);
+      resetStreak();
     }
   }, []);
 

@@ -15,6 +15,7 @@ export const useCharactersStore = create((set) => ({
   correctCharacter: {},
   isGameOver: false,
   hasCorrectlyGuessedCharacter: false,
+  streak: 0,
 
   fetchCharacters: async () => {
     try {
@@ -59,7 +60,14 @@ export const useCharactersStore = create((set) => ({
     set((state) => ({ guesses: [...state.guesses, guess] }));
   },
 
-  setRandomCorrectCharacter: () => {},
+  addStreak: () => {
+    set((state) => ({ streak: state.streak + 1 }));
+  },
+
+  resetStreak: () => {
+    set({ streak: 0 });
+  },
+
   setShowIconNames: () => {
     set((state) => ({ showIconNames: !state.showIconNames }));
   },

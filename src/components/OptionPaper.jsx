@@ -17,6 +17,7 @@ export function OptionPaper() {
     guesses,
     isGameOver,
     hasCorrectlyGuessedCharacter,
+    streak,
   } = useCharactersStore((state) => state);
   const guess = useForm({
     mode: "uncontrolled",
@@ -55,7 +56,7 @@ export function OptionPaper() {
 
         <Stack className="h-[90%]">
           <h3 className="text-center font-semibold font-sans text-lg text-white mt-1 ">
-            Tries: {guesses.length}/5
+            Tries: {guesses.length}/5 - Streak: {streak}
           </h3>
           {isGameOver ? (
             hasCorrectlyGuessedCharacter ? (
